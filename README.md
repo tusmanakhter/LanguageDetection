@@ -25,14 +25,30 @@ however when adding an n-gram to this list, the previous ones must also be in th
 
 The program expects all files with relative paths from the program file or an absolute path.
 
+###Basic
+
 Train/generate the model:
 
 `python3 model.py -e '../Training/trainEN.txt' -f '../Training/trainFR.txt' -i '../Training/trainOT.txt'`
 
-Test the model:
+Test the models:
 
 `python3 model.py -t '../Testing/30Sentences.txt'`
 
 To both train and test:
 
 `python3 model.py -e '../Training/trainEN.txt' -f '../Training/trainFR.txt' -i '../Training/trainOT.txt' -t '../Testing/30Sentences.txt'`
+
+###Experimental
+
+Train/generate the model:
+
+`python3 model.py -e '../Training/trainEN.txt' -f '../Training/trainFR.txt' -i '../Training/trainOT.txt' -y '../Training/trainFY.txt' -n '../Training/trainNL.txt'`
+
+Test the models:
+
+`python3 model.py -t '../Testing/50SentencesExperimental.txt'`
+
+To both train and test:
+
+`python3 model.py -e '../Training/trainEN.txt' -f '../Training/trainFR.txt' -i '../Training/trainOT.txt' -y '../Training/trainFY.txt' -n '../Training/trainNL.txt' -t '../Testing/50SentencesExperimental.txt'`

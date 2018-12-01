@@ -17,14 +17,22 @@ languages = {
     },
     "italian": {
         "output": "OT"
+    },
+    "frisian": {
+        "output": "FY"
+    },
+    "dutch": {
+        "output": "NL"
     }
 }
 
 
-def add_training(training_file_en, training_file_fr, training_file_it):
+def add_training(training_file_en, training_file_fr, training_file_it, training_file_fy, training_file_nl):
     languages["english"]["training"] = training_file_en
     languages["french"]["training"] = training_file_fr
     languages["italian"]["training"] = training_file_it
+    languages["frisian"]["training"] = training_file_fy
+    languages["dutch"]["training"] = training_file_nl
 
 
 def read_model(model, gram, n):
@@ -107,7 +115,7 @@ def get_prediction(gram):
     return max_prob
 
 
-def test_strings(string_list, english_gram, french_gram, italian_gram, name):
+def test_strings(string_list, english_gram, french_gram, italian_gram, frisian_gram, dutch_gram, name):
     grams = {
         'English': {
             'name': 'ENGLISH',
@@ -123,6 +131,16 @@ def test_strings(string_list, english_gram, french_gram, italian_gram, name):
             'name': 'OTHER',
             'model': italian_gram,
             'total': 0
+        },
+        'Frisian': {
+            'name': 'FRISIAN',
+            'model': frisian_gram,
+            'total': 0
+        },
+        'Dutch': {
+            'name': 'DUTCH',
+            'model': dutch_gram,
+            'total': 0
         }
     }
     print("\n{} Predictions:\n".format(name))
@@ -132,6 +150,8 @@ def test_strings(string_list, english_gram, french_gram, italian_gram, name):
         grams['English']['total'] = 0
         grams['French']['total'] = 0
         grams['Italian']['total'] = 0
+        grams['Frisian']['total'] = 0
+        grams['Dutch']['total'] = 0
         with open(output_file, 'a') as file:
             if name == "Unigram":
                 file.write('{}\n\n'.format(value['original']))
@@ -155,8 +175,8 @@ def test_strings(string_list, english_gram, french_gram, italian_gram, name):
             print("Sentence {}: {} is in {}".format(key+1, value['original'], language))
 
 
-def train(training_file_en, training_file_fr, training_file_it):
-    add_training(training_file_en, training_file_fr, training_file_it)
+def train(training_file_en, training_file_fr, training_file_it, training_file_fy, training_file_nl):
+    add_training(training_file_en, training_file_fr, training_file_it, training_file_fy, training_file_nl)
     for index, value in enumerate(ngrams):
         for language in languages.values():
             output_file = './Models/{}{}.txt'.format(value.lower(), language['output'])
@@ -181,9 +201,10 @@ def test(testing_file):
             language['gram'] = gram
             read_model(input_model, gram, index+1)
         test_strings(string_list, languages["english"]["gram"], languages["french"]["gram"],
-                     languages["italian"]["gram"], value)
+                     languages["italian"]["gram"], languages["frisian"]["gram"], languages["dutch"]["gram"], value)
 
 
-def train_and_test(training_file_en, training_file_fr, training_file_it, testing_file):
-    train(training_file_en, training_file_fr, training_file_it)
+def train_and_test(training_file_en, training_file_fr, training_file_it, training_file_fy,
+                   training_file_nl, testing_file):
+    train(training_file_en, training_file_fr, training_file_it, training_file_fy, training_file_nl)
     test(testing_file)
