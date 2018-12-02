@@ -85,18 +85,34 @@ def initialize_gram(n):
     for chars in chars_list:
         gram[chars] = {
             'probability': 0,
-            'count': 0.5
+            'count': 0
         }
     return gram
 
 
 def calc_vals(chars, gram, n):
-    total_chars = len(chars)
+    if n == 1:
+        total_chars = len(chars)
+    else:
+        data = []
+        total_chars = {}
+        if n > 1:
+            for i in itertools.repeat(None, n-1):
+                data.append(letters)
+            prefixes = list(itertools.product(*data))
+            prefixes = [''.join(chars) for chars in prefixes]
+            for prefix in prefixes:
+                total_chars[prefix] = 0
     for char in chars:
         gram[char]['count'] += 1
+        if n != 1:
+            total_chars[char[:-1]] += 1
     for key, value in gram.items():
         count = value['count']
-        probability = count/(total_chars + 0.5*(len(letters)**n))
+        if n == 1:
+            probability = (count+0.5)/(total_chars + len(letters)*0.5)
+        else:
+            probability = (count+0.5)/(total_chars[key[:-1]] + len(letters)*0.5)
         value['probability'] = probability
 
 

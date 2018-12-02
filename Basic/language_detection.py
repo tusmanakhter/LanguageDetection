@@ -74,7 +74,7 @@ def initialize_unigram():
     for letter in letters:
         unigram[letter] = {
             'probability': 0,
-            'count': 0.5
+            'count': 0
         }
     return unigram
 
@@ -85,7 +85,7 @@ def initialize_bigram():
         for letter2 in letters:
             bigram[letter + letter2] = {
                 'probability': 0,
-                'count': 0.5
+                'count': 0
             }
     return bigram
 
@@ -96,17 +96,20 @@ def calc_unigram_vals(chars, unigram):
         unigram[char]['count'] += 1
     for key, value in unigram.items():
         count = value['count']
-        probability = count/(total_chars + len(letters)*0.5)
+        probability = (count+0.5)/(total_chars + len(letters)*0.5)
         value['probability'] = probability
 
 
 def calc_bigram_vals(chars, bigram):
-    total_chars = len(chars)
+    total_chars = {}
+    for letter in letters:
+        total_chars[letter] = 0
     for char in chars:
         bigram[char]['count'] += 1
+        total_chars[char[:-1]] += 1
     for key, value in bigram.items():
         count = value['count']
-        probability = count/(total_chars + 0.5*(len(letters)**2))
+        probability = (count+0.5)/(total_chars[key[:-1]] + len(letters)*0.5)
         value['probability'] = probability
 
 
