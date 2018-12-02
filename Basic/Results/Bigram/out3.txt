@@ -1,0 +1,44 @@
+I'm OK.
+
+UNIGRAM MODEL
+
+UNIGRAM: i
+ENGLISH: P(i) = 0.06878195564084601 ==> log prob of sentence so far: -2.6768138411044506
+FRENCH: P(i) = 0.07324762664504765 ==> log prob of sentence so far: -2.613909432360079
+OTHER: P(i) = 0.09968025911469147 ==> log prob of sentence so far: -2.3057876244811695
+
+UNIGRAM: m
+ENGLISH: P(m) = 0.024484402880432 ==> log prob of sentence so far: -6.386532822387857
+FRENCH: P(m) = 0.030693851997282237 ==> log prob of sentence so far: -6.097602337478756
+OTHER: P(m) = 0.025342579519973422 ==> log prob of sentence so far: -5.981056937382885
+
+UNIGRAM: o
+ENGLISH: P(o) = 0.0728142263354678 ==> log prob of sentence so far: -9.006376748562722
+FRENCH: P(o) = 0.05316877687650476 ==> log prob of sentence so far: -9.031886293224575
+OTHER: P(o) = 0.09885806826675525 ==> log prob of sentence so far: -8.295127048766586
+
+UNIGRAM: k
+ENGLISH: P(k) = 0.008458684886711152 ==> log prob of sentence so far: -13.778938316753809
+FRENCH: P(k) = 0.00029067377170496396 ==> log prob of sentence so far: -17.175195272307633
+OTHER: P(k) = 1.2457437089942697e-05 ==> log prob of sentence so far: -19.588319805544685
+
+According to the unigram model, the sentence is in English
+----------------
+BIGRAM MODEL
+
+BIGRAM: im
+ENGLISH: P(m|i) = 0.04490059189558355 ==> log prob of sentence so far: -3.1033043017911166
+FRENCH: P(m|i) = 0.02887436255882179 ==> log prob of sentence so far: -3.544801186268815
+OTHER: P(m|i) = 0.048064918851435705 ==> log prob of sentence so far: -3.0352027057746205
+
+BIGRAM: mo
+ENGLISH: P(o|m) = 0.13657673784256064 ==> log prob of sentence so far: -5.094172942116556
+FRENCH: P(o|m) = 0.15328792860497886 ==> log prob of sentence so far: -5.4202384260810685
+OTHER: P(o|m) = 0.14343994778067884 ==> log prob of sentence so far: -4.9770415195098705
+
+BIGRAM: ok
+ENGLISH: P(k|o) = 0.014171636655579769 ==> log prob of sentence so far: -9.350685672613535
+FRENCH: P(k|o) = 0.00039327366422565774 ==> log prob of sentence so far: -13.26124326788273
+OTHER: P(k|o) = 4.196038939241356e-05 ==> log prob of sentence so far: -15.05582601390299
+
+According to the bigram model, the sentence is in English

@@ -1,0 +1,74 @@
+I hate AI.
+
+UNIGRAM MODEL
+
+UNIGRAM: i
+ENGLISH: P(i) = 0.06878195564084601 ==> log prob of sentence so far: -2.6768138411044506
+FRENCH: P(i) = 0.07324762664504765 ==> log prob of sentence so far: -2.613909432360079
+OTHER: P(i) = 0.09968025911469147 ==> log prob of sentence so far: -2.3057876244811695
+
+UNIGRAM: h
+ENGLISH: P(h) = 0.06602764955788062 ==> log prob of sentence so far: -5.394495533092803
+FRENCH: P(h) = 0.007840979087356485 ==> log prob of sentence so far: -7.462301001185818
+OTHER: P(h) = 0.0129349721783905 ==> log prob of sentence so far: -6.653608238705826
+
+UNIGRAM: a
+ENGLISH: P(a) = 0.08188631335399933 ==> log prob of sentence so far: -7.896918949295818
+FRENCH: P(a) = 0.08387777564600983 ==> log prob of sentence so far: -9.940695592773764
+OTHER: P(a) = 0.11393156714558592 ==> log prob of sentence so far: -8.825765537735178
+
+UNIGRAM: t
+ENGLISH: P(t) = 0.09242221277901966 ==> log prob of sentence so far: -10.278306880479958
+FRENCH: P(t) = 0.06823909396336213 ==> log prob of sentence so far: -12.625433245868091
+OTHER: P(t) = 0.05719209367992692 ==> log prob of sentence so far: -11.687105150264056
+
+UNIGRAM: e
+ENGLISH: P(e) = 0.12300670409376752 ==> log prob of sentence so far: -12.373823300747635
+FRENCH: P(e) = 0.17101499241940113 ==> log prob of sentence so far: -14.391437297223536
+OTHER: P(e) = 0.12132297981895192 ==> log prob of sentence so far: -13.796404185080958
+
+UNIGRAM: a
+ENGLISH: P(a) = 0.08188631335399933 ==> log prob of sentence so far: -14.87624671695065
+FRENCH: P(a) = 0.08387777564600983 ==> log prob of sentence so far: -16.869831888811483
+OTHER: P(a) = 0.11393156714558592 ==> log prob of sentence so far: -15.96856148411031
+
+UNIGRAM: i
+ENGLISH: P(i) = 0.06878195564084601 ==> log prob of sentence so far: -17.5530605580551
+FRENCH: P(i) = 0.07324762664504765 ==> log prob of sentence so far: -19.48374132117156
+OTHER: P(i) = 0.09968025911469147 ==> log prob of sentence so far: -18.27434910859148
+
+According to the unigram model, the sentence is in English
+----------------
+BIGRAM MODEL
+
+BIGRAM: ih
+ENGLISH: P(h|i) = 0.0036651995750493246 ==> log prob of sentence so far: -5.608872490815238
+FRENCH: P(h|i) = 0.000561145129850952 ==> log prob of sentence so far: -7.485530987411716
+OTHER: P(h|i) = 0.0022888056595921765 ==> log prob of sentence so far: -6.0797251434980435
+
+BIGRAM: ha
+ENGLISH: P(a|h) = 0.2018829444128249 ==> log prob of sentence so far: -7.208939723466224
+FRENCH: P(a|h) = 0.29854992657856094 ==> log prob of sentence so far: -8.694349089327657
+OTHER: P(a|h) = 0.0410828025477707 ==> log prob of sentence so far: -9.27189081803867
+
+BIGRAM: at
+ENGLISH: P(t|a) = 0.1366441019364873 ==> log prob of sentence so far: -9.199315252831708
+FRENCH: P(t|a) = 0.05645826885381203 ==> log prob of sentence so far: -11.568602607417294
+OTHER: P(t|a) = 0.08480809846333115 ==> log prob of sentence so far: -11.739255058036026
+
+BIGRAM: te
+ENGLISH: P(e|t) = 0.08599715357158993 ==> log prob of sentence so far: -11.652756334112857
+FRENCH: P(e|t) = 0.21113975949447344 ==> log prob of sentence so far: -13.12383760491936
+OTHER: P(e|t) = 0.207348891143644 ==> log prob of sentence so far: -13.31260749809197
+
+BIGRAM: ea
+ENGLISH: P(a|e) = 0.08708327675176535 ==> log prob of sentence so far: -14.093646748224787
+FRENCH: P(a|e) = 0.0307054536866787 ==> log prob of sentence so far: -16.607152600568043
+OTHER: P(a|e) = 0.055232558139534885 ==> log prob of sentence so far: -16.208810176298925
+
+BIGRAM: ai
+ENGLISH: P(i|a) = 0.044613148735992654 ==> log prob of sentence so far: -17.203373396921865
+FRENCH: P(i|a) = 0.20094398019189105 ==> log prob of sentence so far: -18.21188171584968
+OTHER: P(i|a) = 0.036450367780933655 ==> log prob of sentence so far: -19.520613906865403
+
+According to the bigram model, the sentence is in English
