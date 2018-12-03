@@ -20,7 +20,7 @@ of one variable. In the _language_detection.py_ file there is the following line
 
 `ngrams = ["Unigram", "Bigram", "Trigram"]`
 
-Adding another n-gram to this list will allow the program to train and test using that value of n it, 
+Adding another n-gram to this list will allow the program to train and test using that value of n, 
 however when adding an n-gram to this list, the previous ones must also be in the list, in order. 
 
 In addition to test with the 3 original languages use the program in folder **_Ngrams_** and to experiment with the
